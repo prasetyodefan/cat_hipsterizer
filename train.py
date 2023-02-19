@@ -7,21 +7,21 @@ import numpy as np
 
 img_size = 224
 
-mode = 'bbs' # [bbs, lmks]
-if mode is 'bbs':
+mode == 'bbs' # [bbs, lmks]
+if mode == 'bbs':
   output_size = 4
-elif mode is 'lmks':
+elif mode == 'lmks':
   output_size = 18
 
 start_time = datetime.datetime.now().strftime('%Y_%m_%d_%H_%M_%S')
 
-data_00 = np.load('dataset/CAT_00.npy')
-data_01 = np.load('dataset/CAT_01.npy')
-data_02 = np.load('dataset/CAT_02.npy')
-data_03 = np.load('dataset/CAT_03.npy')
-data_04 = np.load('dataset/CAT_04.npy')
-data_05 = np.load('dataset/CAT_05.npy')
-data_06 = np.load('dataset/CAT_06.npy')
+data_00 = np.load('..//cat_hipsterizer//dataset//samples.npy')
+data_01 = np.load('..//cat_hipsterizer//dataset//samples1.npy')
+data_02 = np.load('..//cat_hipsterizer//dataset//samples2.npy')
+data_03 = np.load('..//cat_hipsterizer//dataset//samples3.npy')
+data_04 = np.load('..//cat_hipsterizer//dataset//samples4.npy')
+data_05 = np.load('..//cat_hipsterizer//dataset//samples5.npy')
+data_06 = np.load('..//cat_hipsterizer//dataset//samples6.npy')
 
 x_train = np.concatenate((data_00.item().get('imgs'), data_01.item().get('imgs'), data_02.item().get('imgs'), data_03.item().get('imgs'), data_04.item().get('imgs'), data_05.item().get('imgs')), axis=0)
 y_train = np.concatenate((data_00.item().get(mode), data_01.item().get(mode), data_02.item().get(mode), data_03.item().get(mode), data_04.item().get(mode), data_05.item().get(mode)), axis=0)
