@@ -50,6 +50,7 @@ model = Model(inputs=inputs, outputs=net)
 model.summary()
 
 # training
+
 model.compile(optimizer=keras.optimizers.Adam(), loss='mse')
 
 model.fit(x_train, y_train, epochs=50, batch_size=32, shuffle=True,
